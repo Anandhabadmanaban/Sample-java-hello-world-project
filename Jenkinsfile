@@ -7,7 +7,10 @@ pipeline {
             }
             steps {
                 sh 'mvn --version'
-            }
+                sh 'cd ..'
+                sh 'cd ..'
+                 sh 'ls'            
+}
         }
         stage('Front-end') {
             agent {
