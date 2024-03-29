@@ -1,0 +1,4 @@
+FROM anapsix/alpine-java
+WORKDIR /app 
+COPY . /app 
+RUN pwd
