@@ -16,6 +16,7 @@ pipeline {
             }
             steps {
                 sh 'node --version'
+                 sh 'pwd'
             }
         }
     }
