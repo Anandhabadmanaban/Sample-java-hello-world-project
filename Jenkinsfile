@@ -8,6 +8,7 @@ pipeline {
             steps {
                 sh 'mvn --version'
                   sh 'pwd'
+                sh 'ls'
 }
         }
         stage('Front-end') {
@@ -17,6 +18,7 @@ pipeline {
             steps {
                 sh 'node --version'
                  sh 'pwd'
+                sh 'ls'
             }
         }
     }
