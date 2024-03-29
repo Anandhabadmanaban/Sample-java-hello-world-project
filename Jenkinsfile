@@ -1,7 +1,11 @@
 pipeline {
-    agent any
+    agent none
     stages {
         stage('Build') {
+               agent {
+                  docker {
+          image 'maven:3.5.0'
+        }
             steps {
                 sh 'mvn -f hello-app/pom.xml -B -DskipTests clean package'
             }
