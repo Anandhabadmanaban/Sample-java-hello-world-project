@@ -15,7 +15,7 @@ pipeline {
         stage('Docker Build') {
       agent any
       steps {
-        sh 'docker build . -t anandh/sample:latest'
+        sh 'docker build -f docker -t jsamplehellowroldimage:latest .'
           sh 'docker ps'
       }
     }
