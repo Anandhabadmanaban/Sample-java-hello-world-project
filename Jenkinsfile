@@ -1,30 +1,20 @@
 pipeline {
     agent none
     stages {
-        stage('Build') {
-               agent {
-                  docker {
-          image 'maven:3.5.0'
-        }
-}
-            steps {
-                sh 'mvn -f hello-app/pom.xml -B -DskipTests clean package'
+        stage('Back-end') {
+            agent {
+                docker { image 'maven:3.9.6-eclipse-temurin-17-alpine' }
             }
-            post {
-                success {
-                    echo "Now Archiving the Artifacts....."
-                    archiveArtifacts artifacts: '**/*.jar'
-                }
+            steps {
+                sh 'mvn --version'
             }
         }
-        stage('Test') {
-            steps {
-                sh 'mvn -f hello-app/pom.xml test'
+        stage('Front-end') {
+            agent {
+                docker { image 'node:20.11.1-alpine3.19' }
             }
-            post {
-                always {
-                    junit 'hello-app/target/surefire-reports/*.xml'
-                }
+            steps {
+                sh 'node --version'
             }
         }
     }
