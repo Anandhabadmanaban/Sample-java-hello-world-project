@@ -11,6 +11,14 @@ pipeline {
                 sh 'ls'
 }
         }
+
+        stage('Docker Build') {
+      agent any
+      steps {
+        sh 'docker build . -t anandh/sample:latest'
+          sh 'docker ps'
+      }
+    }
         stage('Front-end') {
             agent {
                 docker { image 'node:20.11.1-alpine3.19' }
