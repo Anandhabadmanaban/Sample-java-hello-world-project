@@ -6,6 +6,7 @@ pipeline {
                   docker {
           image 'maven:3.5.0'
         }
+}
             steps {
                 sh 'mvn -f hello-app/pom.xml -B -DskipTests clean package'
             }
