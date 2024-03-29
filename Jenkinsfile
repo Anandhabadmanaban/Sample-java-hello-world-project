@@ -7,9 +7,7 @@ pipeline {
             }
             steps {
                 sh 'mvn --version'
-                sh 'cd ..'
-                sh 'cd ..'
-                 sh 'ls'            
+                  sh 'pwd'
 }
         }
         stage('Front-end') {
