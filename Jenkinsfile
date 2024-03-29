@@ -16,7 +16,7 @@ pipeline {
       agent any
       steps {
         sh 'docker build -f docker -t jsamplehellowroldimage:latest .'
-          sh 'docker ps'
+          sh 'docker image ls'
       }
     }
         stage('Front-end') {
