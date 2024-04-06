@@ -7,6 +7,7 @@ pipeline {
             }
             steps {
                 sh 'mvn --version'
+                sh 'mvn package'
                   sh 'pwd'
                 sh 'ls'
 }
