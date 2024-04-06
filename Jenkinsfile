@@ -7,7 +7,7 @@ pipeline {
             }
             steps {
                 sh 'mvn --version'
-                sh 'mvn -f  /hello-app/'
+                sh 'mvn -f  ./hello-app/'
                   sh 'pwd'
                 sh 'ls'
 }
