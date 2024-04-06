@@ -7,7 +7,7 @@ pipeline {
             }
             steps {
                 sh 'mvn --version'
-                sh 'mvn -f  /hello-app/pom.xml [goals]'
+                sh 'mvn -f  /hello-app/'
                   sh 'pwd'
                 sh 'ls'
 }
