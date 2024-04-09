@@ -2,3 +2,4 @@ FROM anapsix/alpine-java
 WORKDIR /app 
 COPY . /app 
 RUN pwd
+CMD ["java","-jar","hello-app/target/hello-app-1.0.jar"]
