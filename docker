@@ -1,8 +1,8 @@
-FROM anapsix/alpine-java as build
+FROM anapsix/alpine-java AS build
 WORKDIR /app 
 COPY . /app 
 RUN pwd
 
 FROM anapsix/alpine-java
-COPY --from=build hello-app/target/hello-app-1.0.jar /app/hello-app.jar
+COPY --from=build app/hello-app/target/hello-app-1.0.jar /app/hello-app.jar
 CMD ["java","-jar","app/hello-app.jar"]
