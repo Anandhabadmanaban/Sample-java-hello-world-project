@@ -4,5 +4,6 @@ COPY . /app
 RUN pwd
 
 FROM anapsix/alpine-java
+RUN pwd
 COPY --from=build app/hello-app/target/hello-app-1.0.jar /app/hello-app.jar
 CMD ["java","-jar","app/hello-app.jar"]
